@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>下一班雨 · 雨几点到你那条街</title>
+<meta name="description" content="广州天河、越秀、海珠的 15 分钟降水预报，排成一张表：几点下雨、几点停、要不要带伞。">
+<link rel="stylesheet" href="styles.css">
+<script defer src="app-data.js"></script>
+<script defer src="app.js"></script>
+</head>
+<body>
+
+<header class="nav wrap">
+  <span class="wordmark">下一班雨</span>
+  <nav class="nav-links" aria-label="主导航">
+    <a href="#how">怎么用</a>
+    <a href="#board">数据</a>
+    <a href="#faq">常见问题</a>
+    <a href="#about">关于</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <h1>雨几点<br>到你那条街</h1>
+    <p class="lede">广州三个区，15 分钟一格的降水预报。今天剩下的雨排成一张表：几点下、多大、几点停。</p>
+    <a class="btn" href="#board">看今天的表</a>
+  </div>
+
+  <div class="stage">
+    <div class="frag" data-ui aria-label="下一班雨：未来几小时的降水窗口">
+      <div class="frag-head">
+        <div class="tabs" role="tablist" aria-label="选择街道">
+          <button class="tab" role="tab" aria-selected="true" data-district="tianhe">天河</button>
+          <button class="tab" role="tab" aria-selected="false" data-district="yuexiu">越秀</button>
+          <button class="tab" role="tab" aria-selected="false" data-district="haizhu">海珠</button>
+        </div>
+        <span class="frag-meta" data-frag-updated>15:00 更新</span>
+      </div>
+
+      <div class="frag-next">
+        <span class="k" data-frag-k>雨停</span>
+        <strong data-frag-big>19:15</strong>
+        <span class="then" data-frag-then>之后 8 小时是干的</span>
+      </div>
+
+      <ol class="frag-rows" data-frag-rows></ol>
+      <div class="frag-strip" data-frag-strip></div>
+      <p class="frag-legend">15:00 → 18:00，一格 15 分钟</p>
+      <p class="frag-note" data-frag-note>雨正在下，伞带着。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section wrap" id="features">
+  <div class="features-grid">
+    <div class="features-main">
+      <h2 class="section-head">它只做三件事</h2>
+
+      <div class="modules">
+    <article class="module">
+      <div class="panel" data-ui aria-hidden="true">
+        <div class="strip" data-strip></div>
+      </div>
+      <div>
+        <h3>十五分钟一格</h3>
+        <p>预报按 15 分钟切，不按小时估。雨什么时候加大、什么时候停，都落在格子上。</p>
+      </div>
+    </article>
+
+    <article class="module">
+      <div class="panel" data-ui aria-hidden="true">
+        <div class="streets" data-streets></div>
+      </div>
+      <div>
+        <h3>一条街一份</h3>
+        <p>天河、越秀、海珠各有一份自己的时间表。越秀的雨比天河晚一刻钟到，那不是误差，是位置。</p>
+      </div>
+    </article>
+
+    <article class="module">
+      <div class="panel" data-ui aria-hidden="true">
+        <div class="answer">
+          <div><span class="q">要带伞吗</span><span class="a">要</span></div>
+          <div><span class="q">几点出门</span><span class="a">17:50</span></div>
+        </div>
+      </div>
+      <div>
+        <h3>只回答两个问题</h3>
+        <p>要带伞吗，几点出门。不问你去哪，不猜你喜欢什么，不写第三条建议。</p>
+      </div>
+    </article>
+
+    <article class="module">
+      <div class="panel panel-tall photo-panel">
+        <img src="assets/street-in-kadhin-foochow-creek-bridge-country.jpg" width="3838" height="2241"
+             alt="1869 年的中国街道，行人撑着伞沿河走" loading="lazy" decoding="async">
+      </div>
+      <div>
+        <h3>雨比钟表老</h3>
+        <p>一百五十年前，雨落在同样的瓦上。我们只是把它量得更细一点，别的没变。</p>
+        <p class="cap">上海，1869 年，约翰·汤普森摄 · 大都会艺术博物馆，公有领域</p>
+      </div>
+    </article>
+      </div>
+    </div>
+
+    <aside class="features-aside">
+      <div class="aside-inner">
+        <p class="aside-lead">一张表，两个答案：带不带伞，几点出门。</p>
+        <dl class="spec">
+        <dt>数据</dt><dd>Open-Meteo · ICON / GFS</dd>
+        <dt>时间格</dt><dd>15 分钟</dd>
+        <dt>覆盖</dt><dd>天河 · 越秀 · 海珠</dd>
+        <dt>更新</dt><dd>每 15 分钟</dd>
+        </dl>
+      </div>
+    </aside>
+  </div>
+
+  <div class="rest">
+    <figure class="print">
+      <div class="shot" data-shutter>
+        <img src="assets/ochanomizu-in-the-rain.jpg" width="3860" height="2683"
+             alt="浮世绘《御茶之水之雨》：斜雨中的桥与伞" loading="lazy" decoding="async">
+      </div>
+      <figcaption><b>歌川国芳《御茶之水之雨》</b>，19 世纪中叶。雨在木版上是一条条刻出来的线。<br>大都会艺术博物馆，公有领域</figcaption>
+    </figure>
+    <figure class="object">
+      <div class="shot drift" data-shutter>
+        <img src="assets/umbrella.jpg" width="2611" height="4000"
+             alt="1888 年的一把黑色雨伞，伞柄是雕刻的兽首" loading="lazy" decoding="async">
+      </div>
+      <figcaption><b>美国制伞，1888 年。</b>伞柄是雕出来的兽首。<br>大都会艺术博物馆，公有领域</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="board-section" id="board">
+  <div class="board-head">
+    <h2>今天剩下的雨</h2>
+    <span class="stamp">15:00 更新 · Open-Meteo · 15 分钟格</span>
+  </div>
+  <ol class="board" data-board aria-label="未来十小时的降水，一小时一行"></ol>
+</section>
+
+<section class="how" id="how">
+  <div class="how-copy">
+    <h2>三下</h2>
+
+    <div class="statement active" data-statement="0">
+      <h3>先选一条街。</h3>
+      <p>天河、越秀、海珠，各有一份 15 分钟预报。同城不同区，雨到的时间不一样。</p>
+    </div>
+    <div class="statement" data-statement="1">
+      <h3>再看九十分钟。</h3>
+      <p>十二格，一格 15 分钟。柱子是雨强，空的是干；柱子在哪儿抬头，就该带伞。</p>
+    </div>
+    <div class="statement" data-statement="2">
+      <h3>最后定出门时间。</h3>
+      <p>给一个窗口，一句话，不写别的。</p>
+    </div>
+  </div>
+
+  <div class="how-stage">
+    <div class="stage-inner" data-ui aria-live="polite">
+      <div class="state state-streets on" data-state="0">
+        <div class="pick">
+          <button aria-pressed="true">体育西路 · 天河<span>17:15 中雨</span></button>
+          <button aria-pressed="false">环市东路 · 越秀<span>17:15 中雨</span></button>
+          <button aria-pressed="false">江南大道 · 海珠<span>17:15 中雨</span></button>
+        </div>
+      </div>
+      <div class="state state-chart" data-state="1">
+        <div class="bars" data-state-bars></div>
+        <div class="axis"><span>15:00</span><span>16:30</span><span>18:00</span></div>
+      </div>
+      <div class="state state-result" data-state="2">
+        <span class="frag-meta">体育西路 · 天河</span>
+        <span class="big">17:50</span>
+        <dl>
+          <dt>带伞</dt><dd>要，18:00 前后最大 1.6 mm/h</dd>
+          <dt>雨停</dt><dd>19:15，之后到 03:15 是干的</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq" id="faq">
+  <div class="faq-left">
+    <h2>常见问题</h2>
+    <figure class="faq-figure" data-shutter>
+      <img src="assets/broadway-in-the-rain-likely-taken-from.jpg" width="3871" height="2123"
+           alt="1860 年代纽约百老汇的雨，路面反着光" loading="lazy" decoding="async">
+      <figcaption><b>百老汇的雨</b>，1860 年代，爱德华·安东尼摄<br>大都会艺术博物馆，公有领域</figcaption>
+    </figure>
+  </div>
+
+  <div class="faq-list">
+    <details name="q" open>
+      <summary>会推送广告吗<span class="plus" aria-hidden="true"></span></summary>
+      <p>不会。没有广告位，没有账号，也不读你的精确定位；选过的街记在浏览器里。</p>
+    </details>
+    <details name="q">
+      <summary>为什么只到十二小时<span class="plus" aria-hidden="true"></span></summary>
+      <p>15 分钟格在 12 小时内才可信。再往后只剩趋势，我们不假装它精确。</p>
+    </details>
+    <details name="q">
+      <summary>数据从哪儿来<span class="plus" aria-hidden="true"></span></summary>
+      <p>Open-Meteo 的 15 分钟降水预报，模型是 ICON 与 GFS 的集合。页面上的数字每次打开都重新取，取不到就显示上一次的，并写清时间。</p>
+    </details>
+    <details name="q">
+      <summary>准不准<span class="plus" aria-hidden="true"></span></summary>
+      <p>90 分钟内的雨带位置最准，误差在一条街的量级；6 小时以后只看趋势，不看分钟。</p>
+    </details>
+    <details name="q">
+      <summary>只有广州吗<span class="plus" aria-hidden="true"></span></summary>
+      <p>现在有广州的天河、越秀、海珠三条街。深圳在下一个，之后是杭州。</p>
+    </details>
+    <details name="q">
+      <summary>要钱吗<span class="plus" aria-hidden="true"></span></summary>
+      <p>不要。桌面小组件在做，做好也不收费。</p>
+    </details>
+  </div>
+</section>
+
+<div class="footer-spacer"></div>
+
+<footer class="footer" id="about">
+  <span>下一班雨 · 广州</span>
+  <nav class="centre" aria-label="页脚">
+    <a href="#how">怎么用</a>
+    <a href="#board">数据</a>
+    <a href="#faq">常见问题</a>
+    <a href="https://open-meteo.com/" rel="noreferrer">Open-Meteo</a>
+  </nav>
+  <span class="right">2026 · 数据 Open-Meteo</span>
+</footer>
+
+<noscript><p class="wrap" style="padding-block:24px">表格里的数字需要 JavaScript 才能显示；上面的文字是完整的。</p></noscript>
+
+</body>
+</html>

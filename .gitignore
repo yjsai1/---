@@ -1,0 +1,27 @@
+# 检查器与截图的过程产物（体积大，不入库）
+.taste-skill/
+.dsh-office-*/
+
+# 构建 / 调试用的一次性文件
+_tmp-doc.docx
+probe.mjs
+probe2.mjs
+shots2.mjs
+*.tmp
+*.bak
+
+# 系统
+Thumbs.db
+desktop.ini
+# 交付用的文档：仓库里只保留 docs/ 下的一份
+/design-taste-frontend-on-dsh.docx
+/design-taste-frontend-on-dsh-v2.docx
+/design-taste-frontend-on-dsh.pdf
+
+# 调试时裁的图
+/shots/crop-*.jpg
+
+# 早期试过的上海三区响应（未使用）
+/data/jingan.json
+/data/pudong.json
+/data/xuhui.json

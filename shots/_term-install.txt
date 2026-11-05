@@ -1,0 +1,12 @@
+﻿PS C:\Users\admin> Get-ChildItem $env:USERPROFILE\.dsh\skills -Directory | Select-Object Name
+design-taste-frontend
+painted-animation
+
+PS C:\Users\admin> Get-ChildItem $env:USERPROFILE\.dsh\skills\design-taste-frontend | Select-Object Name,Length
+assets       <DIR>
+evals        <DIR>
+library      <DIR>
+references   <DIR>
+scripts      <DIR>
+README.md    5426
+SKILL.md     40079
