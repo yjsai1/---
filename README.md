@@ -3,6 +3,9 @@
 一个用来验证「用 [taste-skill](https://github.com/Leonxlnx/taste-skill) 的 `design-taste-frontend` 做前端」到底能做出什么的演示项目：
 广州三个区的 15 分钟降水预报，被排成一张「发车时刻表」——几点下雨、几点停、要不要带伞。
 
+**在线版本：<https://yjsai1.github.io/---/>**（GitHub Pages，`.github/workflows/pages.yml` 每次推送自动发布）
+
+
 页面上的每个数字都来自 [Open-Meteo](https://open-meteo.com/) 的真实预报响应（`data/gz-*.json`），
 由 `build-data.mjs` 整理成 `app-data.js`，页面不联网也能看。
 
@@ -64,6 +67,18 @@ node build-data.mjs   # 读取 data/gz-*.json，重新生成 app-data.js
 | [Broadway in the Rain] | 爱德华·安东尼，约 1860 年代 | [The Met 262762](https://www.metmuseum.org/art/collection/search/262762) |
 
 字体 Switzer 由 Fontshare 提供，已本地化到 `assets/fonts/`（SIL Open Font License）。
+
+## 部署
+
+推到 `main` 就会自动发布：`.github/workflows/pages.yml` 把页面文件（`index.html`、样式、脚本、`assets/`、`data/`）装进 `_site`，
+用 `actions/configure-pages` + `actions/deploy-pages` 发到 GitHub Pages；工具脚本与文档不进站点。
+
+在本机需要走代理推送时，仓库里设置了本地代理（只对本仓库生效，不写进全局配置）：
+
+```bash
+git config --local http.proxy http://127.0.0.1:7897   # 需要时加
+git config --local --unset http.proxy                 # 不需要时删
+```
 
 ## 说明
 
